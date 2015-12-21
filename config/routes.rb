@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :tasks
+  resources :tasks do
+    member do
+      put :change
+    end
+  end
+  
   devise_for :users
   devise_for :installs
   # The priority is based upon order of creation: first created -> highest priority.
